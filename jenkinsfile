@@ -29,15 +29,15 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "cp -i /var/jenkins_home/tomcat.pem /var/jenkins_home/workspace/Package-pipeline/webapp/target/*.war ec2-user@ec2-13-229-129-228.ap-southeast-1.compute.amazonaws.com:/usr/share/tomcat7/webapps"
+                        sh "cp -i /var/jenkins_home/tomcat.pem /var/jenkins_home/workspace/Package-pipeline/webapp/target/*.war ec2-user@ec2-52-221-199-44.ap-southeast-1.compute.amazonaws.com:../../usr/share/tomcat7/webapps"
                     }
                 }
 
-                stage ("Deploy to Production"){
-                    steps {
-                        sh "cp -i /var/jenkins_home/tomcat.pem /var/jenkins_home/workspace/Package-pipeline/webapp/target/*.war ec2-user@ec2-54-255-207-15.ap-southeast-1.compute.amazonaws.com:/usr/share/tomcat7/webapps"
-                    }
-                }
+                // stage ("Deploy to Production"){
+                //     steps {
+                //         sh "cp -i /var/jenkins_home/tomcat.pem /var/jenkins_home/workspace/Package-pipeline/webapp/target/*.war ec2-user@ec2-54-255-207-15.ap-southeast-1.compute.amazonaws.com:/usr/share/tomcat7/webapps"
+                //     }
+                // }
             }
         }
     }
