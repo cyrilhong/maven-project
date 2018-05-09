@@ -29,7 +29,7 @@ pipeline {
       parallel{
         stage ('Deploy to Staging'){
           steps {
-            sh "scp -i /var/jenkins_home/tomcat.pem /var/jenkins_home/workspace/Package-pipeline/webapp/target/*.war ec2-user@52.221.199.44:/usr/share/tomcat7/webapps"
+            sh "scp -i /var/jenkins_home/tomcat-demo.pem /var/jenkins_home/workspace/Package-pipeline/webapp/target/*.war ec2-user@52.221.199.44:/usr/share/tomcat7/webapps"
           }
         }
 
